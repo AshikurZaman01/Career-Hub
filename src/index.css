@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    display: inline-block;
+    margin: 0 5px;
+}
+li a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #333;
+    font-weight: 400;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+li a.active {
+    background: linear-gradient(90deg, #7E90FE, #9873FF); 
+    font-weight: 700;
+}
+li a:hover:not(.active) {
+    color: #007bff;
+    background-color: #f0f8ff; 
+}
