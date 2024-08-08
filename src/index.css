@@ -22,9 +22,11 @@ li a {
 }
 li a.active {
     background: linear-gradient(90deg, #7E90FE, #9873FF); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: 700;
 }
 li a:hover:not(.active) {
     color: #007bff;
-    background-color: #f0f8ff; 
+    background-color: #f0f8ff; /* Very light blue background */
 }
