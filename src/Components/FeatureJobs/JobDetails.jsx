@@ -14,7 +14,7 @@ const JobDetails = () => {
             .catch(err => console.log(err))
     }, [])
 
-    const findJob = jobs.find((job) => job.id === parseInt(id));
+    const findJob = jobs?.find((job) => job?.id === parseInt(id));
 
 
     return (

@@ -11,8 +11,7 @@ const Details = ({ findJob }) => {
         <div>
 
             <div className="bg-left bg-no-repeat h-64 text-center text-3xl font-bold"
-                style={{ backgroundImage: `url(${logo1})` }}
-            >
+                style={{ backgroundImage: `url(${logo1})` }}>
                 <h1>Job Details</h1>
             </div>
 
