@@ -1,28 +1,28 @@
 [
     {
         "id":1,
-        "logo":"https://i.ibb.co/NyW6vSW/accounts-1.png",
+        "logo":"https://img.freepik.com/free-vector/online-banking-concept-illustration_114360-13925.jpg?ga=GA1.1.1712936203.1723179493&semt=ais_hybrid",
         "category_name":"Account & Finance",
         "availability":"300 Jobs Available"
 
     },
     {
         "id":2,
-        "logo":"https://i.ibb.co/PC8JwL3/chip-1.png",
+        "logo":"https://img.freepik.com/free-vector/abstract-spring-flower-background-illustration_460848-12506.jpg?t=st=1723179963~exp=1723183563~hmac=389a8b6bb12ce603d4daeb31936bc123f1dd5895c25cc8730042863106cf8b5a&w=740",
         "category_name":"Creative Design",
         "availability":"100+ Jobs Available"
 
     },
     {
         "id":3,
-        "logo":"https://i.ibb.co/H4f5ZCp/Group-13.png",
+        "logo":"https://img.freepik.com/free-photo/digital-marketing-with-icons-business-people_53876-94833.jpg?ga=GA1.1.1712936203.1723179493&semt=ais_hybrid",
         "category_name":"Marketing & Sales",
         "availability":"150 Jobs Available"
 
     },
     {
         "id":4,
-        "logo":"https://i.ibb.co/72841P4/social-media-1.png",
+        "logo":"https://img.freepik.com/free-vector/flat-engineering-team-background_23-2148158732.jpg?ga=GA1.1.1712936203.1723179493&semt=ais_hybrid",
         "category_name":"Engineering Job",
         "availability":"224 Jobs Available"
 

@@ -2,7 +2,7 @@ import image from '../../assets/images/user.png';
 
 const Banner = () => {
     return (
-        <div className="bg-gray-100 py-12">
+        <div className="bg-gray-100 py-12 h-[90vh]">
             <div className="container mx-auto flex flex-col-reverse md:flex-row justify-between items-center px-6">
                 <div className="left md:w-1/2 mt-8 md:mt-0">
                     <h1 className="text-4xl font-bold text-gray-800 mb-4">
