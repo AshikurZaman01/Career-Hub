@@ -6,12 +6,17 @@ import Home from './Components/Home/Home.jsx';
 import Statistics from './Components/Statistics/Statistics.jsx';
 import Blog from './Components/Blog/Blog.jsx';
 import AppliedJobs from './Components/AppliedJobs/AppliedJobs.jsx';
+import Roots from './Components/Roots/Roots.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Roots></Roots>,
     children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
       {
         path: "statistics",
         element: <Statistics />

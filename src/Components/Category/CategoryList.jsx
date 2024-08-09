@@ -14,7 +14,7 @@ const CategoryList = ({ category }) => {
 
                 <div>
                     <h1 className="text-xl font-semibold">{category_name}</h1>
-                    <p className="font-semibold">{availability}</p>
+                    <p className="font-mono text-gray-500">{availability}</p>
                 </div>
 
             </div>
