@@ -4,9 +4,7 @@ import Jobs from "./Jobs";
 const FeatureJobs = () => {
 
     const [jobs, setJobs] = useState([]);
-    const [showAll, setShowAll] = useState(false);
-
-    const numberOfJobs = showAll ? jobs.length : 4;
+    const [dataLength, setDataLength] = useState(4);
 
     useEffect(() => {
         fetch('../../../public/data/jobs.json')
@@ -25,15 +23,15 @@ const FeatureJobs = () => {
 
             <div className="grid grid-cols-2 gap-5 py-5">
                 {
-                    jobs.slice(0, numberOfJobs).map((job) => <Jobs key={job.id} job={job}></Jobs>)
+                    jobs.slice(0, dataLength).map((job) => <Jobs key={job.id} job={job}></Jobs>)
                 }
             </div>
 
-            <div className="flex justify-center my-10">
-                <button onClick={() => setShowAll(!showAll)} className="btn btn-outline btn-info">Show All</button>
+            <div className={`${dataLength === jobs.length && "hidden"} flex justify-center items-center py-10`}>
+                <button className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition duration-300" onClick={() => setDataLength(dataLength + 1)}>Show All</button>
             </div>
 
-        </div>
+        </div >
     );
 }
 
