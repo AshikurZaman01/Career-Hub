@@ -1,11 +1,27 @@
 import { CiBadgeDollar, CiLocationArrow1 } from "react-icons/ci";
-import { FaPhone, FaRegCalendarAlt } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
+import { AppliedJobsContext } from '../../ContextAPI/AppliedJobs';
+import { useContext } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const JobDetailsRight = ({ findJob }) => {
-    console.log(findJob);
+    const { contact_information, job_title, salary, id } = findJob || {};
 
-    const { company_name, contact_information, educational_requirements, experiences, job_description, job_responsibility, job_title, job_type, location, logo, remote_or_onsite, salary } = findJob || {};
+    const { appliedJobs, addAppliedJobs } = useContext(AppliedJobsContext);
+
+    const handleApplyNow = () => {
+        const isJobExists = appliedJobs.some((job) => job.id === id);
+        if (isJobExists) {
+            alert('You have already applied for this job');
+        } else {
+            addAppliedJobs(findJob);
+            alert('Job applied successfully');
+        }
+    };
+
+    const isJobApplied = appliedJobs.some((job) => job.id === id);
 
     return (
         <div className="py-10">
@@ -19,7 +35,7 @@ const JobDetailsRight = ({ findJob }) => {
                 </div>
 
                 <div className="flex justify-start items-center gap-2 text-xl">
-                    <span><FaRegCalendarAlt className="text-blue-500" /></span>
+                    <span><FaPhone className="text-blue-500" /></span>
                     <h4 className="font-bold">Job Title : </h4>
                     <p className="text-gray-500 text-sm font-semibold">{job_title}</p>
                 </div>
@@ -48,12 +64,17 @@ const JobDetailsRight = ({ findJob }) => {
             </div>
 
             <div className="px-5 mt-5">
-                <button className="w-full py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-md font-semibold">
-                    Apply Now
+                <button
+                    className={`w-full py-3 text-white ${isJobApplied ? "bg-gray-500" : " bg-blue-500 hover:bg-blue-600"} rounded-md font-semibold`}
+                    onClick={handleApplyNow}
+                    disabled={isJobApplied}
+                >
+                    {isJobApplied ? "Applied" : "Apply Now"}
                 </button>
             </div>
+
         </div>
     );
-}
+};
 
 export default JobDetailsRight;
