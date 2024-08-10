@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 const AppliedJobsContext = createContext();
 
 const AppliedJobsProvider = ({ children }) => {
+
     const [appliedJobs, setAppliedJobs] = useState([]);
     const [appliedJobsCount, setAppliedJobsCount] = useState(0);
 

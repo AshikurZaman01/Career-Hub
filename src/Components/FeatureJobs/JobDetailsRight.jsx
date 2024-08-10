@@ -3,7 +3,6 @@ import { FaPhone } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { AppliedJobsContext } from '../../ContextAPI/AppliedJobs';
 import { useContext } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const JobDetailsRight = ({ findJob }) => {
