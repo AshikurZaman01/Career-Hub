@@ -1,13 +1,33 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import logo1 from '../../assets/images/bg1.png';
 import { AppliedJobsContext } from '../../ContextAPI/AppliedJobs';
 import AllJobs from './AllJobs';
+
 const AppliedJobs = () => {
-
     const { appliedJobs, appliedJobsCount } = useContext(AppliedJobsContext);
+    const [filter, setFilter] = useState('all');
 
+    const handleFilter = (e) => {
+        setFilter(e.target.value);
+        console.log(e.target.value);
+    }
 
+    const filterJobs = appliedJobs.filter((job) => {
+        if (filter === 'all') {
+            return true;
+        } else if (filter === 'Full Time') {
+            return job.job_type === 'Full Time';
+        } else if (filter === 'Part Time') {
+            return job.job_type === 'Part Time';
+        } else if (filter === 'Remote') {
+            return job.remote_or_onsite === 'Remote';
+        } else if (filter === 'Onsite') {
+            return job.remote_or_onsite === 'Onsite';
+        }
+        return false;
+    });
 
+    console.log(appliedJobs);
 
     return (
         <div>
@@ -22,15 +42,23 @@ const AppliedJobs = () => {
                 </div>
 
                 <div className='flex justify-end items-center mr-10 mb-10'>
-                    <h1>Filter By</h1>
+                    <div>
+                        <label htmlFor="filter" className='mr-2'>Filter By:</label>
+                        <select value={filter} onChange={handleFilter} name="filter" id="filter" className='border rounded px-3 py-1'>
+                            <option value="all">All</option>
+                            <option value="Full Time">Full Time</option>
+                            <option value="Part Time">Part-Time</option>
+                            <option value="Remote">Remote</option>
+                            <option value="Onsite">On Site</option> {/* Updated here */}
+                        </select>
+                    </div>
                 </div>
 
                 <div>
                     {
-                        appliedJobs.map((job) => <AllJobs key={job.id} job={job}></AllJobs>)
+                        filterJobs.map((job) => <AllJobs key={job.id} job={job}></AllJobs>)
                     }
                 </div>
-
             </div>
         </div>
     );
